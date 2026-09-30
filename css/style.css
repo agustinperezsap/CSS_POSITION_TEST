@@ -22,14 +22,7 @@ Observa cómo el texto está pegado al borde. Ahora aplícale un Relleno (paddin
 5
 Ahora ponle un Margen (margin) superior de 50px para despegarlo del techo de la página. */
 
-/* Reset */
-/* El asterisco (*) selecciona absolutamente TODAS las etiquetas de la web */
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* Fundamental para que las matemáticas no se rompan */
-}
+@import url('./reset.css');
 
 .tarjeta {
     width: 300px;
