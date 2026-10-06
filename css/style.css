@@ -18,17 +18,55 @@ Un ancho (width) de 300px.
 Un fondo de tu color favorito (background-color).
 Ponle un borde sólido (border: 2px solid black).
 Observa cómo el texto está pegado al borde. Ahora aplícale un Relleno (padding) de 2rem. ¡Mira cómo respira la caja!
-
 5
 Ahora ponle un Margen (margin) superior de 50px para despegarlo del techo de la página. */
+/* 📝 Ejercicio de Clase 06
+Este ejercicio es opcional y no deberás entregarlo para corrección. Te sugerimos realizarlo y llevar tus dudas a la clase sincrónica.
 
+Demuestra tu control espacial creando una "Tarjeta de Producto" (Product Card) de Ecommerce:
+
+Estructura Base: En tu HTML crea un contenedor .tarjeta y ponle position: relative. Dale dimensiones como width: 250px.
+
+Badge de Oferta: Dentro del HTML de la tarjeta, crea un <span class="oferta">-50%</span>. Usando CSS, ponle position: absolute y llévalo a la esquina superior derecha (top: 10px, right: -10px).
+
+Interactividad Dinámica: Haz que tu tarjeta tenga una sombra que se haga mucho más grande cuando pases el mouse por encima de ella (box-shadow en el estado .tarjeta:hover).
+
+Desafío Avanzado: Usa un pseudo-elemento ::after acoplado a la etiqueta de tu precio final para que inyecte visualmente el texto " USD" al final, sin escribir esa palabra en el HTML. */
 @import url('./reset.css');
 
 .tarjeta {
-    width: 300px;
-    background-color: #f0f0f0;
-    border: 2px solid black;
-    padding: 2rem;
-    margin-top: 50px;
-    border-radius: 10px; /* Opcional: para bordes redondeados */
+  position: relative;
+  width: 250px;
+  background-color: #f0f0f0;
+  border: 2px solid black;
+  padding: 2rem;
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+.oferta {
+  position: absolute;
+  top: 10px;
+  right: -10px;
+  background-color: crimson;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.precio-final {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.precio-final::after {
+  content: " USD";
+  font-size: 16px;
 }
